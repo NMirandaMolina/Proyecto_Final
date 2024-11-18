@@ -77,4 +77,19 @@ public class ControlRegistro {
         SimpleDateFormat formatoFecha = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
         return formatoFecha.format(new Date());
     }
+
+
+    private boolean existeSerialActivo(String serial) {
+        for (Registro registro : registros) {
+            if (registro instanceof RegistroEntrada &&
+                    registro.getComputador().getSerial().equals(serial) &&
+                    !estaSalidaRegistrada(serial)) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+}
+
 }
