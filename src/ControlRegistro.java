@@ -18,7 +18,7 @@ public class ControlRegistro {
         String fecha = obtenerFechaActual();
         RegistroEntrada registroEntrada = new RegistroEntrada(computador, fecha);
         registros.add(registroEntrada);
-        System.out.pri ntln("Entrada registrada para el computador con serial: " + computador.getSerial());
+        System.out.println("Entrada registrada para el computador con serial: " + computador.getSerial());
     }
 
 
