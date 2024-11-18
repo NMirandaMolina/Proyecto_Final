@@ -10,11 +10,18 @@ public class ControlRegistro {
     }
 
     public void registrarEntrada(Computador computador) {
+        if (existeSerialActivo(computador.getSerial())) {
+            System.out.println("Error: Ya existe un registro activo para el computador con serial: " + computador.getSerial());
+            return;
+        }
+
         String fecha = obtenerFechaActual();
         RegistroEntrada registroEntrada = new RegistroEntrada(computador, fecha);
         registros.add(registroEntrada);
-        System.out.println("Entrada registrada para el computador con serial: " + computador.getSerial());
+        System.out.pri ntln("Entrada registrada para el computador con serial: " + computador.getSerial());
     }
+
+
 
     public void registrarSalida(String serial) {
         Computador computador = buscarComputadorActivo(serial);
