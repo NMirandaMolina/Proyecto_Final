@@ -11,3 +11,5 @@ public class RegistroEntrada extends Registro {
         System.out.println("Fecha de entrada: " + fecha);
     }
 }
+
+
